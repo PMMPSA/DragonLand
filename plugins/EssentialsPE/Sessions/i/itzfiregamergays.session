@@ -1,0 +1,54 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "dinh": [
+            -285.5204,
+            69,
+            458.1302,
+            "sb",
+            339,
+            34
+        ],
+        "bauvat": [
+            837.3,
+            65,
+            462.7,
+            "sb",
+            190,
+            24
+        ],
+        "shop": [
+            251.1465,
+            69,
+            -850.4468,
+            "sb",
+            171,
+            20
+        ],
+        "mass": [
+            1031.2307,
+            69,
+            652.6002,
+            "sb",
+            128,
+            16
+        ],
+        "sb2": [
+            89.6568,
+            69,
+            89.4942,
+            "sb",
+            95,
+            30
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": null,
+    "ptCommands": false,
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

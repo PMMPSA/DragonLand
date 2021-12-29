@@ -1,0 +1,17 @@
+---
+######################################################
+# GLGFDonate Created by KagiamyWasen #
+# The Original Code is Of xFlare's xRulesx           #
+######################################################
+
+
+#Add staff below, You may leave some blank.
+donate1: "§b[-§eThông Tin VIP§b-]"
+donate2: "§l§eVIPI:§a (Giá 10K) Được 10 Ngày Chat Màu, Fly, Time Set, TP"
+donate3: "§l§eVIPII:§a (Giá 20K) Được 20 Ngày, Chat Màu, Fly, Time Set, TP, ClearInv, Kit"
+donate4: "§l§eVIPIII:§a (Giá 30K) Được 30 Ngày Chat Màu, Fly, Time Set, TP, Cleainv, Kit, Feed, Kit, SighWarp,"
+donate5: "§l§eBoss:§a (Giá 50K) Được 50 Ngày, Chat Màu, Fly, Time Set, TP, Clearinv, Kit, Feed, Kit, SighWarp, Pets §c(Chưa Bán) "
+donate6: "§l§eVIPIII:§a (Giá 35K) Được 35 Ngày"
+#Please do not add more Staff slots!
+#It may corrupt the config file!
+...

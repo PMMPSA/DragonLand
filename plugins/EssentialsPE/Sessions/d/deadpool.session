@@ -1,0 +1,46 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "nha": [
+            -481.7886,
+            69,
+            1021.2087,
+            "sb",
+            0,
+            -24
+        ],
+        "vinh": [
+            93.8623,
+            69,
+            1020.5903,
+            "sb",
+            85,
+            0
+        ],
+        "enchant": [
+            -80.0926,
+            68,
+            279.2369,
+            "sb",
+            339,
+            13
+        ],
+        "shopmoi": [
+            -289.5527,
+            75,
+            -95.5437,
+            "sb",
+            7,
+            15
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": null,
+    "ptCommands": false,
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

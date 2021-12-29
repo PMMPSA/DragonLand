@@ -1,0 +1,30 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "1": [
+            -330.8626,
+            57,
+            266.9254,
+            "sb",
+            303,
+            63
+        ],
+        "3": [
+            -308.2437,
+            71,
+            255.3001,
+            "sb",
+            332,
+            24
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": "HoiTaoA",
+    "ptCommands": false,
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

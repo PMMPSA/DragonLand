@@ -1,0 +1,19 @@
+# Updated 01/12/18 09:24 by TerminatorVN 1.0.0-Special
+# victim name | ban date | banned by | banned until | reason
+
+ommands.ban.success|2017-12-24 18:13:09 +0700|ENDER_BOY___VN__|Forever|Banned by an operator.
+ender|2017-12-25 10:49:35 +0700|Night_EnderVN|Forever|Banned by an operator.
+eken|2017-12-25 16:39:28 +0700|Night_EnderVN|Forever|Banned by an operator.
+nightender|2017-12-25 16:50:43 +0700|Night_EnderVN|Forever|Banned by an operator.
+nightendervn99|2017-12-25 16:51:08 +0700|ENDER_BOY___VN__|Forever|Banned by an operator.
+porry|2017-12-27 16:00:19 +0700|Ghast_Noob|Forever|Banned by an operator.
+girl|2017-12-29 09:14:31 +0700|ThanhTuan3|Forever|banned 3 ngày nha
+anhvy123456789i|2017-12-31 13:01:27 +0700|Ghast_Noob|Forever|Banned by an operator.
+girl_cute|2018-01-05 22:52:37 +0700|Rcon|Forever|Banned by an operator.
+minh1999|2018-01-06 13:49:51 +0700|Ghast_Noob|Forever|Banned by an operator.
+zackugamingvn|2018-01-07 21:03:52 +0700|Night_EnderVN|Forever|Banned by an operator.
+ohdoremon|2018-01-09 19:36:07 +0700|Ghast_Noob|Forever|Banned by an operator.
+heo|2018-01-10 12:16:46 +0700|VuDucTM|Forever|Biến =)
+heogm|2018-01-10 12:19:15 +0700|VuDucTM|Forever|Ngu + láo = ban
+gau_con|2018-01-11 11:44:52 +0700|CONSOLE|Forever|Banned by an operator.
+heo69|2018-01-12 09:24:58 +0700|ThanhTuan3|Forever|Banned by an operator.

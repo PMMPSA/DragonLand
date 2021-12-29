@@ -1,0 +1,32 @@
+---
+tree-cutter:
+  17:0:break: 50
+  17:1:break: 50
+  17:2:break: 50
+  18:0:break: 50
+  18:1:break: 50
+  18:2:break: 50
+miner:
+  1:0:break: 50
+  4:0:break: 50
+tree-planter:
+  6:0:place: 50
+  6:1:place: 50
+  6:2:place: 50
+all:
+  17:0:break: 50
+  17:1:break: 50
+  17:2:break: 50
+  18:0:break: 50
+  18:1:break: 50
+  18:2:break: 50
+  14:0:break: 50
+  15:0:break: 50
+  16:0:break: 50
+  56:0:break: 50
+  1:0:break: 50
+  4:0:break: 50
+  6:0:place: 50
+  6:1:place: 50
+  6:2:place: 50
+...

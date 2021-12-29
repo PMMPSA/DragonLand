@@ -1,0 +1,30 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "mi": [
+            423.4329,
+            77,
+            -283.7917,
+            "sb",
+            271,
+            41
+        ],
+        "khoa": [
+            652.1291,
+            69,
+            465.6026,
+            "sb",
+            184,
+            62
+        ]
+    },
+    "isMuted": true,
+    "mutedUntil": false,
+    "nick": null,
+    "ptCommands": false,
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

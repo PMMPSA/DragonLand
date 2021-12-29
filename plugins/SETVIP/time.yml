@@ -1,0 +1,26 @@
+---
+night:
+  current-vip: 2018-01-12,9999999,Member
+  holding-vip:
+  - 1,OP
+  - 99998,Member
+  - 1,OP
+  - 99998,Member
+  - 99999999,OP
+  - 1,Admin
+  - 99999994,OP
+ngu768:
+  current-vip: 18-01-12,999994,Member
+  holding-vip:
+  - 999999998,Admin
+chituong_panda:
+  current-vip: 18-01-12,16,VIPII
+Nhan:
+  current-vip: 18-01-12,3,Police
+nin:
+  current-vip: 18-01-12,4,Police
+khoa:
+  current-vip: 18-01-12,4,Helper
+Slen:
+  current-vip: 2018-01-12,7,Police
+...

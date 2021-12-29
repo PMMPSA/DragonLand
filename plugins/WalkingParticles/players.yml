@@ -1,0 +1,1770 @@
+---
+JackMT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - colorful
+Ghast_Noob:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle: []
+DanhMiner64:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - item_265
+ngu768:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+    2: lava
+VuDucTM:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - lava
+MaxNoobvn:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - block_20
+ThanhTuan3:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Huyskyhigh:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+TuanKiet6666:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+Lam_Kid_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+BinVCG:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+sheeptv:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+EnderOfIce:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+yuu_taru:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+Truong_Hao_MSTR:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+VINHMC:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+dinhngocduy:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+The3T:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+Night_EnderVN:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - colorful
+Tuankiet6666:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - block_20
+senkairai:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Zio_Dragon_YT:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - spore
+ImNoobYT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+minecraftpro752:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+SlenderZinkai_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+natsu:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+nat:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+my_noob9898:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+Khoi_YT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+Mine_Ender_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+vuductm:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+KhiemMinerVN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+KhanhVyYo:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+MiMi08642:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - block_20
+jamivn_TM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+PanDa_Builder:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - item_265
+Deadpool:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Bracing_VNYT:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - item_265
+ninjageggdgehddg:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Melii:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MelooUnicorn2:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+XZeroVN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+KNMiner:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Steve10007:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+vinh_sminer:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+romkt8754:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MHGamingTM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Hoangzero01:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Zz_DatMc_zZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+NhanKaKa:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+BiomeConstrucTer:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+SDK_BackManTM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Hanto_Kun:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Masskill:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+CoolBoyGaming_VN:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - spore
+ItzFireGamerGaYs:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+noob_ngay_tho:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+thiendh1234:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+cuteboy:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Eles:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZackyGamingVN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzHoang_VNzZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HuySkyHigh:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ItzFireGamerGaY:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+anhvy123456789i:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Technoblade:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Bosss:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DiamondDangtm:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ENDER_BOY___VN__:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+thuanyoutuber:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+CBM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Zom_Boss:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Beny_MeoMeo:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+QuanVictor:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+maiconkiss:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+NN888_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Ghast_Cat:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+anhvy_gaming_vn:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+TrollGameTV:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+tnt_ngu_nguoi:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzMiKo_CuTezZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+sans123456789:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+khoastr:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+SuperMan16:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Steve:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Hung_ga:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+JackMinecraft:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+080907:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+JackMinerVNTM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+noobvn123:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzDuczZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzNightzZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzDucVzZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzNGUzZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+zPixy:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+conglol:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+FantasyGamer111:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Kiet_Tran:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Tuankiet:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Zeropast_YTB:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HungGamerVN2:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HungGamingTv:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Tam_Ender:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - block_20
+Night_Ender:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HTgaming:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+BuN_OppA:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+bayanxgece:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+NoobKazanir:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ikercassiluan:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ghastmc:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Kun:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Ghast_Noo:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Thanhtuan3:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+hoangkaito:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+lavanu:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzEnder_BoyzZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Mon_YT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+jaxoSK:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+my_noob9897:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Baelis:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Buronkandaki:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Dark_Phat_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+_Tiger_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Port_Ghast_D_Ace:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Sicklesickle:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Noob_PhatGaming:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MPCE_KIET:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+RosoSaki_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Monkey_D_Luffy:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+NoobRainbow365:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DeadPoolBest_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Khoa_Cool:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+PandaBoyGamer_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+GHAST:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+NTN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Ghast_Noobvn:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DucMatDay:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DucKoCoDay:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Duclanhlung:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - spore
+FraughtLocket32:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Dark_Khang_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+nam_hoang:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+VuDucTMm:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+GamerVn:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+VagueWall104922:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+OopsMuti:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Luffy_Cong:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+SkyGamingVN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+many:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+BraCingVN:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - spore
+PanDaVn_TM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+claykhoa05092007:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Priminho:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Zezimm:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Hacker1234:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+VuDuc:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MockChimp601424:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Game_Offline:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MagoGamexYT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+zZHanto_KunZz:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+GIRL_CUTE:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Best_0000:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+_yLirahy_:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+QuocThai:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Musk:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzXxEnderSkyxXz:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ThanhTuan:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Musk2:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+GamingDemon_YT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Minh1999:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+supper_noobik:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MyStery_BuN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DVP_CoolBoyVn:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Khoastr:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HieuMTMC:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZenTV_Vn:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+LyricalPuppy624:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+vuonc:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+RestfulFlower35:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+CuteTgamerTM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+FrailXCK123:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+KuNgok:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+TAEHYUNG23:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Moon:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+NoThing:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - spore
+HorridCascade7:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+mrsushide:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+PanDa_TK:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+PanDaVN_TM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+CoolBoyGamimg_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MidezGamer2907:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Cuteboy1993:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+nganhuynh:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HotGirl_Bela:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DZFire:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+NOOB_NGUZz:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+chituong_panda:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Moon_Gaming:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+taolaai:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+BeoLa:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+dreamgamer1460:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+GuardedSun75703:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ngu767:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Anh_Knight:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+tamgarena:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Nam_gamer_MCPE:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+mumija:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HeoGM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZackyGamingYT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle: []
+SansVN_YT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+TranHuynhBaoNam:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Chhean_Gaming:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+vuon:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+dkxndnx:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Ton_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Dat_Ola_pro:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Huyy_YTB:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Dragon_Noob:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Zero_FramVl:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Game_Thu_Gaming:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Duskfrancis:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+TangentialMango:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+LionMcVN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+tam2gia2:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+NhanKaka:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+KhangTM:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+zio_dragonyt:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+night_endervn:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+thanhtuan3:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Ohdoremon:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+VuGamer1:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+VuGamer:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+dangtung:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DepDoKiuLoYT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HcOmBoH:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+SexyWolfGirl:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Temple:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+costovn123:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+xck:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+girlvn12:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Ngu768:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Misthy:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ZzTapCzZ:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Monster_dragon:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+haiphong:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Boy_minecrafter:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+linh6A:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MrrChheanKH:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+girlvn123:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+girl123:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+girl12:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HeoGM69:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+PocketMineCoder1:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+GiannisMasterio:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HuyKhoDo:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+noob_minecraft:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+tuankiet00:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+___:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DeniableWeb1187:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Defib:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+shadyboy:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+zio_dragon_yt:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Maxnoobvn:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+LienQuan:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+CravingCarrot31:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+VuDaiCa:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - spore
+Cuongvip:
+  amplifier: 11
+  display: line
+  enabled: false
+  particle:
+  - spore
+davidpvp17:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+StefanRoPvP:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+HKBRGN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+DanCraft:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Kidduybuilder:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+TragicalVeil668:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ShinMCPE:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Adrian:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+chivi:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Xe_om:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Gau_Con:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+MrNexo:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+KhGamer:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+EnderSky:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Alex_:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Duyken_YT:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Steve3333:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+PhucTranTHHP:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+CrispyBench392:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Mr_DoL:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+SkyMCPE_VN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+LoinMcVN:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Sorve:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+KhoaBlack:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+ILHAMAXE:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Steve333:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+Satang_1999:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+sorve:
+  amplifier: 11
+  display: line
+  enabled: true
+  particle:
+  - spore
+...

@@ -1,0 +1,9 @@
+# EconomyS configuration resource
+monetary-unit: "Xu"
+add-op-at-rank: false
+default-money: 1000
+max-money:123456789
+debug: true
+default-lang: user-define
+auto-save-interval: 1000
+provider: yaml

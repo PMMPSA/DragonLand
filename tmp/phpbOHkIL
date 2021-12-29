@@ -1,0 +1,33 @@
+name: OreInstantDrop
+main: main_folder\OreInstantDrop
+api: 1.12.0
+version: "1.0"
+author: ScandiePlay<?php
+
+namespace main_folder;
+
+use pocketmine\event\block\BlockBreakEvent;
+use pocketmine\Server;
+use pocketmine\block\IronOre;
+use pocketmine\block\GoldOre;
+use pocketmine\plugin\PluginBase;
+use pocketmine\event\Listener;
+use pocketmine\item\Item;
+
+class OreInstantDrop extends PluginBase implements Listener {
+
+  public function onEnable() {
+    $this->getServer()->getPluginManager()->registerEvents($this, $this);
+  }
+  
+  public function onBreak(BlockBreakEvent $event) {
+    if($event->getBlock()->getId() == 15) {
+      $drops = array(Item::get(265, 0, 1));
+      $event->setDrops($drops);
+    }
+    if($event->getBlock()->getId() == 14) {
+      $drops = array(Item::get(266, 0, 1));
+      $event->setDrops($drops);
+    }
+  }
+}

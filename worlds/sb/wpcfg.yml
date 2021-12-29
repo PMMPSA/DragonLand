@@ -1,0 +1,7 @@
+---
+bancmds:
+  /opms: /opms
+banitem:
+  138: Beacon
+pvp: false
+...

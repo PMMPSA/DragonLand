@@ -1,0 +1,49 @@
+---
+prefix: "§cD§aR§6L§b"
+suffix: ""
+time: 50
+sendmessage-format: "&b-=-=[{PREFIX}]=-=- {SUFFIX} &a{SENbER}&e>&f {MESSAGE}"
+datetime-format: "H:i:s"
+broabcast-enabled: true
+messages:
+ - "&b-=[{PREFIX}]§b=-&f §e•§bHãy Ủng Hộ Server Bằng Cách Vote Qua Link bit.do/vote-drl"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bMọi Người Trong Server Vui Lòng Ghi /rules Đọc Luật"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bCác OP Trong Server Vui Lòng Không Tạo World Hãy Qua World Sb Hoặc World All Để Build"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bGhi /sb auto Để Tìm Đảo Còn Trống"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bCuối Tháng 2 Này Nếu TOP 1 Vote Sẽ Nhận Ngay Đảo 555;555"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bHãy Qua Ngay Warp Mua Item Bằng Cách /warp muaitem Để Mua Được Những Món Siêu VIP Từ Server"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bCác OP Trong Server Vui Lòng Không Tạo World Hãy Qua World Sb Hoặc World All Để Build"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bStaff Trong Server Sẽ Luôn Sẵn Sàng Giúp Đỡ Bạn"
+ - "&b-=[{PREFIX}]§b=-§f §e•§bDonate Tại Link: bit.do/DRLY Để Server Có Tiền Mua Trade Và Buyec Nào :)"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bVote Ngay Cho Server Tại Link: bit.do/drlvote"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bBạn Muốn Bay Lượn Trên Bầu Trời? Còn Chờ Gì Nữa Hãy Mua Ngay JetPack Tại Link: bit.do/DRLZ Hoặc bit.do/DRLY"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bMọi Người Trong Server Vui Lòng Ghi /rules Để Độc Luật"
+ - "&b-=[{PREFIX}]§b=-§f §e•§bAi Ông Tám Bà Tám Lài Mai Làm Mối Server Vài Builder Nào (=^.^=)"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bHãy Ủng Hộ Server Bằng Cách Vote Qua Link bit.do/vote-drl"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bDonate Server Tại Link bit.do/DRLZ Hoặc bit.do/DRLY"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bNếu Muốn Có Nhiều Quyền Lợi Hơn Hãy Mua VIP Ở Link bit.do/DRLX"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bHãy Ủng Hộ Server Bằng Cách Vote Qua Link bit.do/vote-drl"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bMọi Người Trong Server Vui Lòng Ghi /rules Đọc Luật"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bCác OP Trong Server Vui Lòng Không Tạo World Hãy Qua World Sb Hoặc World All Để Build"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bServer Vẫn Chưa Hoàn Thiện Nếu Có Sai Sót Gì Mong Các Bạn Thông Cảm"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bServer Còn Thiếu Nhiều Plugin Nếu Có Qua Link bit.do/csplugin Để Chia Sẻ Cho Chủ Server"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bGhi /giavip Để Xem Giá Và Thông Tin VIP"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bHãy Ủng Hộ Server Bằng Cách Vote Qua Link bit.do/vote-drl"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bNếu Phát Hiện Hacker Hãy Báo Hay Cho Staff Để Staff Kiệp Thời Xử Lí"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bHãy Mua Ngay VIPIII Để Nhận Thêm 1 Cái JetPack Nhé :)"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bNếu Không Biết JetPack Là Gì Thì Hãy Liên Hệ Staff Để Biết :)"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bMọi Người Trong Server Phải Đoàn Kết Và Đùm Bọc Lẫn Nhau Nha"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bNếu Bạn Nói Tục Thì Sẽ Bị Kết Tội Nặng Đó"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bSắp Tới Tết Rồi :) Vào Ngay Ngày Tết Để Nhận Lì Xì Nha Nhớ Mặc Skin Đẹp Vào =)"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bBạn Muốn PvP Trên Bầu Trời? Thì Hãy Rủ Bạn Bè Ghi /warp pvp Để PvP Nào :)"
+ - "&b-=[{PREFIX}]§b=-&f §e•§bWarp PvP Là Một Nơi Nguy Hiểm Hãy Cẩn Thận Khi Đến Đó! Bạn Có Thể Chết Bất Cứ Lúc Nào =)"
+ - "&b-=[{PREFIX}]§b=-&f §e•§b Để Khóa Rương Các Bạn Dùng Lệnh /pg lock Và ghi /pg Để Biết Thêm Thông Tin"
+popup-time: 150
+popup-duration: 5
+senbpopup-format: "&a{SENbER}&e>>&f {MESSAGE}"
+popup-broabcast-enabled: false
+popups:
+ - "&aTry Shop Now!"
+ - "&aTry Skyblock Now!"
+ - "&aTry PvP Now!"
+...

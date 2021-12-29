@@ -1,0 +1,10 @@
+name: Trade[GN]
+version: 1.0
+main: GN\Trade\Main
+author: Ghast Noob
+description: Plugin Trade Bởi ***-***
+api: [2.0.0, 3.0.0]
+commands:
+ trade:
+  usage: /trade list để xem danh sách đặc biệt
+  default: true

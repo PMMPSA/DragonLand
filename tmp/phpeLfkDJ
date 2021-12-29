@@ -1,0 +1,469 @@
+name: SkyBlock
+main: MyPlot\MyPlot
+version: 2.0
+load: STARTUP
+api: 3.0.1
+author: no name (edit by CBM) 
+description: Plot and protection plugin
+softdepend: [EconomyAPI, PocketMoney]
+
+permissions:
+  myplot.command:
+    description: Allows users to use myplot features
+    default: op
+    children:
+      myplot.command.help:
+        description: Displays all the available commands
+        default: true
+      myplot.command.claim:
+        description: Gives the claim command
+        default: true
+      myplot.command.info:
+        description: Gives the info command
+        default: true
+      myplot.command.generate:
+        description: Gives the generate command
+        default: op
+      myplot.command.addhelper:
+        description: Gives the addhelper command
+        default: true
+      myplot.command.removehelper:
+        description: Gives the removehelper command
+        default: true
+      myplot.command.auto:
+        description: Gives the auto command
+        default: true
+      myplot.command.play:
+        description: Play command
+        default: true
+      myplot.command.clear:
+        description: Gives the clear command
+        default: true
+      myplot.command.dispose:
+        description: Gives the dispose command
+        default: true
+      myplot.command.reset:
+        description: Gives the reset command
+        default: true
+      myplot.command.biome:
+        description: Gives the biome command
+        default: true
+      myplot.command.home:
+        description: Gives the home command
+        default: true
+      myplot.command.homes:
+        description: Gives the homes command
+        default: true
+      myplot.command.name:
+        description: Gives the name command
+        default: true
+      myplot.command.give:
+        description: Gives the give command
+        default: true
+      myplot.command.warp:
+        description: Gives the warp command
+        default: true
+  myplot.admin:
+    description: Grant administrator powers
+    default: op
+    children:
+      myplot.admin.clear:
+        description: Allow clear command on every plot
+        default: op
+      myplot.admin.dispose:
+        description: Allow dispose command on every plot
+        default: op
+      myplot.admin.reset:
+        description: Allow reset command on every plot
+        default: op
+      myplot.admin.addhelper:
+        description: Allow addhelper command on every plot
+        default: op
+      myplot.admin.removehelper:
+        description: Allow removehelper command on every plot
+        default: op
+      myplot.admin.build:
+        description: Allow player to build outside his own plots
+        default: op
+        children:
+          myplot.admin.build.plot:
+            description: Allow player to build on all plots
+            default: op
+          myplot.admin.build.road:
+            description: Allow player to build on the road
+            default: op
+      myplot.admin.name:
+        description: Allows player to change the name of every plot
+        default: op
+      myplot.admin.warp:
+        description: Allow player to warp to unclaimed plots
+        default: op
+      myplot.admin.biome:
+        description: Allow player to use the biome command on all plots
+        default: op
+  myplot.claimplots:
+    description: Allows players to claim X plots
+    default: false
+    children:
+      myplot.claimplots.2:
+        description: Allow player to claim 2 plots
+        default: true
+      myplot.claimplots.unlimited:
+        description: Allow player to claim unlimited plots
+        default: op
+# The language that should be used in MyPlot
+# Available languages: eng, nl, vi
+#
+# English language pack by @Exxarion
+# Dutch language pack by @Wies
+# Vietnamese language pack by @Harry
+#
+language: vi
+
+# The data provider where plot data is stored.
+# There is currently only one data provider: sqlite.
+DataProvider: sqlite
+
+# Use an economy with MyPlot. This will allow for plot pricing such as claiming, clearing, etc.
+# Currently supported economy plugins: Economy$, PocketMoney
+# MyPlot will use any economy plugin found on the server.
+# Be sure not to use more than 1 economy plugin!
+UseEconomy: false
+
+# Amount of plots to be cached.
+# Increasing this number might improve performance, but also increase memory usage.
+PlotCacheSize: 256
+
+# When a player enters a plot, a popup with basic info will be shown
+ShowPlotPopup: true
+
+# Amount of blocks to reset per tick.
+# Increasing this number will speed up '/p clear' and '/p reset' but also increases lag
+ClearBlocksPerTick: 256
+
+
+# These settings will be used when creating a new world.
+DefaultWorld:
+
+  # Restrict entities (e.g. tnt) from moving except falling
+  # This will prevent things like tnt cannons ruining other plots
+  RestrictEntityMovement: true
+
+  # How much it costs to claim a plot (Economy must be set to 'true')
+  ClaimPrice: 0
+  # How much it costs to clear a plot (Economy must be set to 'true')
+  ClearPrice: 0
+  # How much it costs to dispose a plot (Economy must be set to 'true')
+  DisposePrice: 0
+  # How much it costs to reset a plot (Economy must be set to 'true')
+  ResetPrice: 0
+  MaxPlotsPerPlayer: 2
+
+  # The size of a plot
+  PlotSize: 180
+  # The height of a plot
+  GroundHeight: 64
+  # The width of the road
+  RoadWidth: 7
+
+  # The block that the road is made of (Default is Oak Planks)
+  RoadBlock: '5:0'
+  # The block that plot walls are made of (Default is Stone Slabs)
+  WallBlock: '44:0'
+  # The block used as the plot floor (Default is Grass)
+  PlotFloorBlock: '2:0'
+  # The block that fills the rest of the plot (Default is Dirt)
+  PlotFillBlock: '3:0'
+  # The block at the bottom (Default is Bedrock)
+  BottomBlock: '7:0'
+﻿# Vietnamese language pack for MyPlot
+# Created by Parroted - an old guy and QuangDo - play.fcavn.net
+
+# Popup when entering a plot
+popup=Bạn đã vào đảo {%0}
+popup.owner=Sở hữu bởi {%0}
+popup.available=Đảo này chưa có chủ! Dùng /sb claim
+
+# /sb info
+command.name=skyblock
+command.alias=sb
+command.desc=Nhận và quản lý đảo
+command.usage=§f§f[§aSkyblock§r§f] •> §cCách dùng: /sb help
+command.unknown=§r§f[§aSkyblock§r§f] •> Có gì đó sai . Hãy nhập /sb help để xem các lệnh 
+
+subcommand.usage=Cách dùng: {%0}
+
+#Errors that are displayed when the player does something wrong, or the plugin screws up.
+error=Ồ! Có gì đó không ổn
+notinplot=§r§f[§aSkyblock§r§f] §d✖§c Bạn đang không đứng trong một đảo
+notowner=§r§f[§aSkyblock§r§f] •> §cBạn không phải là chủ của đảo này !!
+
+confirm=confirm
+
+#The /sb help Subcommand
+help.name=help
+help.desc=Xem danh sách trợ giúp
+help.usage=/sb help
+help.header=--- Đang mở trang hướng dẫn {%0} of {%1} ---
+
+#The /sb addhelper Subcommand
+addhelper.name=addhelper
+addhelper.alias=addh
+addhelper.desc=§r§f[§aSkyblock§r§f] •> §aThêm người vào đảo của bạn để có thể chung để xây dựng !
+addhelper.usage=/sb addhelper <player>
+addhelper.alreadyone=§r§f[§aSkyblock§r§f] •> §aBạn §d{%0}§a hiện đã là helper của đảo !
+addhelper.success=§r§f[§aSkyblock§r§f] •> Chúc mừng chế §d{%0} đã trở thành helper của đảo
+
+#The /sb removehelper Subcommand
+removehelper.name=removehelper
+removehelper.alias=rmh
+removehelper.desc=§r§f[§aSkyblock§r§f] •> Đuổi helper khỏi đảo của bạn
+removehelper.usage=/sb removehelper <player>
+removehelper.notone=§r§f[Skyblock§r§f] •> §aChế §d{%0} §akhông phải là helper của đảo
+removehelper.success=§r§f[§aSkyblock§r§f] •> §aHiện tạo§d {%0} §akhông còn là helper của đảo
+
+#The /sb claim Subcommand
+claim.name=claim
+claim.desc=Mua đảo bạn đang đứng
+claim.usage=/sb claim
+claim.yourplot=§r§f[§aSkyblock§r§f] •> ✖ §cBạn không thể mua vì đây là đảo của bạn .
+claim.alreadyclaimed=§r§f[§aSkyblock§r§f] •> §aĐảo này đã có người sở hữu§d {%0}
+claim.maxplots=§r§f[§aSkyblock§r§f] •> ✖§cBạn đã sở hữu tối đa {%0} đảo nên không thể claim đảo nào nữa 
+claim.nomoney=Bạn không đủ tiền để mua đảo này
+claim.success=§r§f[§aSkyblock§r§f] •> (§bClaim Successfully§r§f) •> §aĐã mua đảo thành , chúc bạn chơi vui vẻ ở đảo chính mình !
+
+#The /sb auto Subcommand
+auto.name=auto
+#auto.alias=a
+#auto.desc=Đi đến đảo trống trên thế giới đó
+#auto.usage=/sb auto
+auto.notplotworld=§r§f[§aSkyblock§r§f] •> ✖§c Bạn đang ở ngoài thế giới của skyblock
+auto.success=§r§f► §eĐã đi đến đảo §r(§d♦§c{%0}§d♦, §d♦§c{%1}§d♦§r§f)
+auto.noplots=§r§f[§aSkyblock§r§f] •> ✖§c Không có đảo trống nào ở quanh đây
+
+#The /sb play Subcommand
+play.name=play
+play.alias=p
+play.desc=Đi đến đảo
+play.usage=/sb play
+
+#The /sb dispose Subcommand
+dispose.name=dispose
+dispose.desc=Bỏ đảo của bạn
+dispose.usage=/sb dispose
+dispose.confirm=§r§f[§cSkyblock§r§f] •> §aBạn có chắc chắn muốn bỏ đảo §d♦§c{%0}§d♦§a ? Nếu chấp nhận , hãy dùng lệnh §6/sb dispose confirm
+dispose.nomoney=Bạn không đủ tiền để bỏ đảo
+dispose.success=§r§f[§aSkyblock§r§f] •> §aĐảo đã bị bỏ thành công
+
+#The /sb name Subcommand
+name.name=name
+name.desc=Đặt hoặc đổi tên cho đảo của bạn
+name.usage=/sb name <name>
+name.success=§r§f[§aSkyblock§r§f] •> §aTên của đảo này được đổi thành:§b {%0}
+
+#The /sb home Subcommand
+home.name=home
+home.alias=h
+home.desc=Đi về đảo của bạn
+home.usage=/sb home [số theo dạng x;y đảo]
+home.noplots=§r§f[§aSkyblock§r§f] •> ✖§x Bạn không có đảo nào
+home.notexist=§r§f[§aSkyblock§r§f] •> §aBạn không sở hữu đảo số §d{%0} 
+home.success=§r§f[§aSkyblock§r§f] •> §aĐang về đảo của bạn §r>§d♦§c{%0}§d♦§r<
+home.error=§r✖ §cKhông thể đi đến đảo
+
+#The /sb homes Subcommand
+homes.name=homes
+homes.desc=Danh sách đảo của bạn
+homes.usage=/sb homes
+homes.noplots=§r§f[§aSkyblock§r§f] •> ✖§c Bạn không sở hữu đảo nào
+homes.header=Đảo đang hoạt động:
+
+#The /sb info Subcommand
+info.name=info
+info.alias=i
+info.desc=Xem thông tin về đảo
+info.usage=/sb info
+info.about=§r§f►§aThông tin về đảo§r§f ◄§d♦§c{%0}§d♦
+info.plotname=§r§f►§aTên đảo§r§f◄ §r§f>§d♦§b{%0}§d♦§r§f
+info.owner=§r§f►Chủ đảo§r§f◄:§d♦§c{%0}§d♦
+info.helpers=§r§f►§aNgười giúp đảo§r§f◄: §d♦§c{%0}§d♦
+info.biome=Hệ sinh thái: {%0}
+
+#The /sb generate Subcommand - Can only be used by OPs or players with the myplot.command.generate permission
+generate.name=generate
+generate.alias=gen
+generate.desc=Tạo ra một world skyblock mới
+generate.usage=/sb generate <tên>
+generate.exists=World có tên {%0} đã có sẵn
+generate.success=§r§f[§aGenerate§r§f] •> §aĐã tạo ra thế giới skyblock tên§r§f•>{%0}§r§f<• §athành công !!
+generate.error=§r§f[§aGenerate§r§f] •> ✖ §cKhông thể tạo thế giới được
+
+#The /sb give Subcommand
+give.name=give
+give.desc=Cho đảo của mình cho người khác
+give.usage=/sb give [tên người chơi]
+give.notonline=Người chơi đó hiện không online
+give.maxedout=Người chơi đó đã có đủ số đảo cho phép
+give.toself=Bạn không thể tự cho chính mình
+give.confirm=Bạn chắc bạn muốn gửi đảo {%0} cho {%1}? Nếu chắc chắn hãy dùng lệnh /sb give {%1} confirm
+give.success=Bạn đã gửi đảo cho {%0} thành công
+give.received={%0} đã cho bạn đảo của họ, {%1}
+
+# The /sb warp Subcommand
+warp.name=warp
+warp.desc=Di chuyển tới đảo
+warp.usage=/sb warp <id>
+warp.wrongid=§r§f[§aSkyblock§r§f] •> ✖ §cMã đảo dạng §dX;Z mới được
+warp.notinplotworld=§r§f[§aSkyblock§r§f] •> ✖ §cBạn đang không ở trong thế giới skyblock
+warp.unclaimed=§r§f[§aSkyblock§r§f] •> ✖ §cBạn không thể di chuyển tới đảo vì đảo chưa được claim
+warp.success=§r§f[§aSkyblock§r§f] •> §d♦§aBạn đang di chuyển đến đảo§d♦ §r§f•>§c{%0}§r§f•<
+# English language pack for MyPlot
+# Created by Wiez & Exxarion
+
+# Popup when entering a plot
+popup=You entered plot {%0}
+popup.owner=Owned by {%0}
+popup.available=This plot is open! Use /p claim
+
+# /p info
+command.name=plot
+command.alias=p
+command.desc=Claim and manage your plots
+command.usage=Usage: /plot <help|sub-cmd> [options]
+command.unknown=Unknown command. Try /p help for a list of commands
+
+subcommand.usage=Usage: {%0}
+
+#Errors that are displayed when the player does something wrong, or the plugin screws up.
+error=Whoops! Something went wrong
+notinplot=You are not standing inside a plot
+notowner=You do not own this plot
+
+confirm=confirm
+
+#The /p help Subcommand
+help.name=help
+help.desc=Shows the help menu
+help.usage=/p help [page]
+help.header=--- Showing MyPlot help page {%0} of {%1} ---
+
+#The /p addhelper Subcommand
+addhelper.name=addhelper
+addhelper.alias=addh
+addhelper.desc=Add a helper to your plot
+addhelper.usage=/p addhelper <player>
+addhelper.alreadyone={%0} is already a helper of this plot
+addhelper.success={%0} is now a helper of this plot
+
+#The /p removehelper Subcommand
+removehelper.name=removehelper
+removehelper.alias=delh
+removehelper.desc=Remove a helper from your plot
+removehelper.usage=/p removehelper <player>
+removehelper.notone={%0} is not a helper
+removehelper.success={%0} has been removed from plot helpers
+
+#The /p claim Subcommand
+claim.name=claim
+claim.desc=Claim the plot that you are standing on
+claim.usage=/p claim [name]
+claim.yourplot=You have already claimed this plot
+claim.alreadyclaimed=This plot is already claimed by {%0}
+claim.maxplots=You reached the limit of {%0} plots per player
+claim.nomoney=You do not have enough money to claim this plot
+claim.success=You have successfully claimed this plot
+
+#The /p dispose Subcommand
+dispose.name=dispose
+dispose.desc=Disposes your plot
+dispose.usage=/p dispose
+dispose.confirm=Are you sure you want to dispose plot {%0} ? If so, use /p dispose confirm
+dispose.nomoney=You do not have enough money to dispose this plot
+dispose.success=Plot disposed
+
+#The /p reset Subcommand
+reset.name=reset
+reset.desc=Disposes and clears your plot
+reset.usage=/p reset
+reset.confirm=Are you sure you want to reset plot {%0} ? If so, use /p reset confirm
+reset.nomoney=You do not have enough money to reset this plot
+reset.success=Plot reset
+
+#The /p clear Subcommand
+clear.name=clear
+clear.desc=Clears your plot
+clear.usage=/p clear
+clear.confirm=Are you sure you want to clear plot {%0} ? If so, use /p clear confirm
+clear.nomoney=You do not have enough money to clear this plot
+clear.success=Plot cleared
+
+#The /p biome Subcommand
+biome.name=biome
+biome.desc=Changes your plot biome
+biome.usage=/p biome [biome]
+biome.success=Plot biome changed to {%0}
+biome.invalid=That biome does not exist
+biome.possible=Possible biomes are: {%0}
+
+#The /p name Subcommand
+name.name=name
+name.desc=Sets or changes your plot name
+name.usage=/p name <name>
+name.success=Plot name changed to {%0}
+
+#The /p home Subcommand
+home.name=home
+home.alias=h
+home.desc=Travel to your plot
+home.usage=/p home [number]
+home.noplots=You do not own any plots
+home.notexist=You do not own a plot with id {%0} 
+home.success=Teleported to plot {%0}
+home.error=Could not travel to plot
+
+#The /p homes Subcommand
+homes.name=homes
+homes.desc=Shows your claimed plots
+homes.usage=/p homes
+homes.noplots=You do not own any plots
+homes.header=Plots you own:
+
+#The /p info Subcommand
+info.name=info
+info.alias=i
+info.desc=Shows information about a plot
+info.usage=/p info
+info.about=Info about plot {%0}
+info.plotname=Name: {%0}
+info.owner=Owner: {%0}
+info.helpers=Helpers: {%0}
+info.biome=Biome: {%0}
+
+#The /p generate Subcommand - Can only be used by OPs or players with the myplot.command.generate permission
+generate.name=generate
+generate.alias=gen
+generate.desc=Generate a new plot world
+generate.usage=/p generate <name>
+generate.exists=World with name {%0} already exists
+generate.success=Successfully generated plot world {%0}
+generate.error=World could not be generated
+
+#The /p give Subcommand
+give.name=give
+give.desc=Give your plot to someone else
+give.usage=/p give [name]
+give.notonline=That player is not online
+give.maxedout=That player has reached the maximum number of plots
+give.toself=You cannot give a plot to yourself
+give.confirm=Are you sure you want to give plot {%0} to player {%1}? If so, use /p give {%1} confirm
+give.success=You have given the plot to {%0}
+give.received={%0} gave you their plot, {%1}
+
+# The /p warp Subcommand
+warp.name=warp
+warp.desc=Teleport to a plot
+warp.usage=/p warp <id>
+warp.wrongid=The plot id should be in the format X;Z
+warp.notinplotworld=You are not in a plot world
+warp.unclaimed=You cannot warp to an unclaimed plot
+warp.success=You are teleported to plot {%0}

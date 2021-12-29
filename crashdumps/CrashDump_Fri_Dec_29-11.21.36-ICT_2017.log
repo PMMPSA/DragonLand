@@ -1,0 +1,101 @@
+GenisysPro Crash Dump Fri Dec 29 11:21:36 ICT 2017
+
+Error: Allowed memory size of 1073741824 bytes exhausted (tried to allocate 4096 bytes)
+File: /src/pocketmine/level/Level
+Line: 328
+Type: E_ERROR
+
+Code:
+[319]      * @param int $z
+[320]      *
+[321]      * @return string
+[322]      */
+[323]     public static function chunkHash(int $x, int $z) {
+[324]         return PHP_INT_SIZE === 8 ? (($x & 0xFFFFFFFF) << 32) | ($z & 0xFFFFFFFF) : $x . ":" . $z;
+[325]     }
+[326] 
+[327]     public static function blockHash(int $x, int $y, int $z) {
+[328]         return PHP_INT_SIZE === 8 ? (($x & 0xFFFFFFF) << 36) | (($y & Level::Y_MASK) << 28) | ($z & 0xFFFFFFF) : $x . ":" . $y . ":" . $z;
+[329]     }
+[330] 
+[331]     public static function getBlockXYZ($hash, &$x, &$y, &$z) {
+[332]         if (PHP_INT_SIZE === 8) {
+[333]             $x = $hash >> 36;
+[334]             $y = ($hash >> 28) & Level::Y_MASK; //it's always positive
+[335]             $z = ($hash & 0xFFFFFFF) << 36 >> 36;
+[336]         } else {
+[337]             $hash = explode(":", $hash);
+[338]             $x = (int)$hash[0];
+
+Backtrace:
+#0 (): pocketmine\Server->crashDump(boolean)
+
+GenisysPro version: 0000000000000000000000000000000000000000 [Protocol 113; API 3.0.1]
+uname -a: Linux localhost 3.18.14-12149057 #1 SMP PREEMPT Fri Nov 10 12:03:08 KST 2017 armv8l
+PHP version: 7.0.3
+Zend version: 3.0.0
+OS : Linux, android
+
+Server uptime: 5 hours 8 minutes 0 seconds
+Number of loaded worlds: 7
+Players online: 7/100
+
+Loaded plugins:
+Donate 3 by Array for API(s) 1.10.0
+AntiServerStop 1.1 by paetti for API(s) 1.0.0, 2.0.0, 3.0.0, 3.0.1, 3.1.0, 3.0.0-ALPHA1, 4.0.0, 5.0.0
+AntiVoid 1.0.0 by KairusDarkSeeker for API(s) 2.0.0
+BuyFly_MCPE14 1 by MCPE14 - LYT for API(s) 2.0.0, 3.0.0, 3.0.0-ALPHA6
+Cameraman 1.1 by ChalkPE for API(s) 1.12.0, 1.13.0, 2.0.0
+SClearLagg 1 by Sergey_Dertan for API(s) 1.8.0
+CustomAlerts 1.6 by EvolSoft for API(s) 3.0.0-ALPHA5, 3.0.0-ALPHA7
+EconomyAPI 2.0.9 by onebone for API(s) 1.0.0, 1.1.0, 1.2.0, 1.2.1, 1.3.0, 1.3.1, 1.4.0, 1.4.1
+EconomyAuction 2.0.2 by onebone for API(s) 1.0.0, 1.1.0, 1.2.0, 1.2.1, 1.3.0, 1.3.1, 1.4.0, 1.4.1
+EconomyJob 2.0.4 by onebone for API(s) 2.0.0, 2.1.0, 3.0.0, 3.0.0-ALPHA6
+EconomyLand 2.0.9 by onebone - LYT for API(s) 2.0.0, 3.0.0, 3.0.0-ALPHA6
+EconomyPShop 2.0.2 by onebone for API(s) 1.12.0
+EconomySell 2.0.7 by onebone for API(s) 1.12.0
+EconomyShop 2.0.7 by onebone for API(s) 1.12.0
+EconomyUsury 1.0.1 by onebone for API(s) 1.12.0
+EssentialsPE 2.0.0 by LegendsOfMCPE Team for API(s) 2.1.0, 2.0.0
+FactionsPro 1.3.9 by Tethered_ for API(s) 2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5
+FrameKeeper 1.1 by KhoaGamingPro for API(s) 3.0.0, 3.0.1, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6
+HealthBar 1.0.1 by LegendOfMCPE for API(s) 2.0.0, 3.0.1, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6
+iProtector 3.1b by LDX for API(s) 1.9.0, 2.0.0
+ItemCloud 1.3 by onebone for API(s) 1.4.0
+KillChat 1.0.2.MOD by Array for API(s) 1.9.0, 2.0.0
+ManyWorlds 2.2.0dev1 by aliuly for API(s) 2.0.0
+MIE_Converter 1.0.1 by FaigerSYS for API(s) 2.0.0, 3.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6, 3.0.0-ALPHA7
+MIE_Protector 1.0.2 by FaigerSYS for API(s) 2.0.0, 3.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6, 3.0.0-ALPHA7
+MSpawns 1.5 by EvolSoft for API(s) 2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4
+muamau 1 by MCPEVN-Team for API(s) 3.0.0
+NoDrops 1.1 by SavionLegendZzz, thebigsmileXD for API(s) 1.12.0
+OreInstantDrop 1.0 by ScandiePlay for API(s) 1.12.0
+ParticlesPlus 0.0.2 by ImagicalGamer for API(s) 1.0.0, 2.0.0, 3.0.0
+Fireworks_JJBH 1.0 by Jaciel by Jaciel14 for API(s) 1.12.0
+PlayerProfile-DP 1 by KYUMA for API(s) 5.0.0, 4.0.0, 3.0.0, 2.0.0, 1.0.0
+PlayerSize 1 by SoiCon for API(s) 3.0.0-ALPHA7
+PocketGuard 2.2 by MinecrafterJPN, KhoaGamingPro for API(s) 3.0.0, 3.0.0-ALPHA6
+PurePerms 1.3.7 by 64FF00 & ProjectInfinity for API(s) 1.13.0, 2.0.0
+RankPoints 1.5.2 by JD for API(s) 3.0.0-ALPHA5, 3.0.0-ALPHA6
+RealTime 2.1.1 by Guillaume351 for API(s) 2.0.0, 3.0.0-ALPHA5
+REDNoBreak 0.1 by Adam1609 for API(s) 2.0.0
+SAC 3.2.5 by DarkWav for API(s) 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0
+AlwaysSpawn 2.2.2 by Philip Shilling for API(s) 1.12.0
+SignEnchant 1.1.1 by FRONGKY for API(s) 1.0.0, 1.1.0, 1.2.0, 1.2.1, 3.0.0-ALPHA6, 3.0.0-ALPHA5, 3.0.0-ALPHA4, 2.0.0
+SimpleAuth 1.7.2 by PocketMine Team, shoghicp for API(s) 2.0.0
+SimpleAuthHelper 2.0.4 by aliuly for API(s) 2.0.0, 3.0.0-ALPHA7
+SimpleRules 1.2 by KhoaGamingPro for API(s) 3.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4
+MagicWE 0.2.6 by thebigsmileXD for API(s) 1.13.0, 2.0.0
+superBAR 1.6.2 by FaigerSYS, KhoaGamingPro for API(s) 2.0.0, 3.0.0, 3.0.0-ALPHA6
+Trade 1 by Minuha for API(s) 2.0.0, 3.0.0
+VoteReward 1 by KhoaGaming123 for API(s) 2.0.0, 3.0.0
+WorldLoader 1 by KhoaGamingPro for API(s) 3.0.0, 3.0.0-ALPHA6
+WorldProtect 2.3.5 by aliuly for API(s) 2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5
+AutoMessage 1.16 by SoiCon for API(s) 3.0.0-ALPHA7
+Slapper_Việt_Hóa_By_Sói_Con 1.1 by SoiCon for API(s) 3.0.0-ALPHA5, 3.0.0-ALPHA6
+SlapperRotation_Việt_Hóa_By_Sói_Con 1.1 by SoiCon for API(s) 3.0.0-ALPHA5, 3.0.0-ALPHA6
+DangnhapOP 1 by KhoaGamingPro for API(s) 3.0.0, 3.0.0-ALPHA5, 3.0.0-ALPHA6
+EconomyAirport 2.0.4 by onebone for API(s) 1.12.0
+GrabBag 2.3.0 by aliuly for API(s) 1.10.0, 1.11.0, 1.12.0
+PureChat 1.4.0 by 64FF00 for API(s) 3.0.0-ALPHA5, 3.0.0-ALPHA6, 3.0.0-ALPHA7
+SkyBlock 2 by no name (edit by hugoDZgamer) for API(s) 3.0.1

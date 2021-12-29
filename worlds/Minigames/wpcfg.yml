@@ -1,0 +1,12 @@
+---
+bancmds:
+  /trade: /trade
+banitem:
+  325: Bucket
+  293: Diamond Hoe
+  277: Diamond Shovel
+  10: Lava
+  8: Water
+protect: lock
+pvp: false
+...

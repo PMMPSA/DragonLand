@@ -1,0 +1,282 @@
+---
+name: PlayerProfile-DP
+author: KYUMA
+main: PlayerProfile\Main
+version: 1.0
+api: [5.0.0, 4.0.0, 3.0.0, 2.0.0, 1.0.0]
+website: http//instagram.com/ky75
+
+commands:
+  profile:
+    description: use plugin PlayerProfile-DP /pr help
+    aliases: [pr]
+  myprofile:
+    description: to see your Profile
+    aliases: [mypr]<?php
+
+namespace PlayerProfile;
+
+use pocketmine\plugin\PluginBase;
+use pocketmine\event\Listener;
+
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
+
+use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\event\player\PlayerDeathEvent;
+use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\player\PlayerChatEvent;
+
+use pocketmine\utils\TextFormat as O;
+use pocketmine\utils\Config as C;
+
+use pocketmine\Player;
+use pocketmine\Server;
+use pocketmine\entity\Entity;
+
+class Main extends PluginBase implements Listener{
+	
+	public function onEnable(){
+		$this->getServer()->getPluginManager()->registerEvents($this,$this);
+		$this->getLogger()->info(O::GREEN."Plugin PlayerProfile-DP by KYUMA Loaded");
+		@mkdir($this->getDataFolder());
+	}
+	
+	public function onChat(PlayerChatEvent $e){
+		$p = $e->getPlayer();
+		$n = $p->getName();
+		$c = new C($this->getDataFolder() .$n.".yml", C::YAML);
+		$bio = $c->get("setbio");
+		$msg = $e->getMessage();
+		
+		if($bio === true){
+			$c->set("bio",$msg);
+			$c->save();
+			$e->setCancelled(true);
+			$p->sendMessage(O::GOLD.O::BOLD."new bio: ".$msg);
+			$c->set("setbio",false);
+			$c->save();
+		}
+	}
+	
+	public function onCommand(CommandSender $sender, Command $cmd, $lable, array $args){
+		switch($cmd->getName()){
+			case 'myprofile':
+			$n = $sender->getPlayer()->getName();
+			$c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+			$bio = $c->get("bio");
+			$deaths = $c->get("deaths");
+			$kills = $c->get("kills");
+			$gender = $c->get("gender");
+			$age = $c->get("age");
+			$country = $c->get("country");
+			$countjoin = $c->get("countjoinserver");
+			$nl = "\n";
+			
+						$sender->sendMessage($nl.O::AQUA.O::BOLD."+-+-+-+-".O::YELLOW."[YourProfile]".O::AQUA."-+-+-+-+");
+						$sender->sendMessage(O::AQUA.O::BOLD."BIO: ".$bio);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."Kills: ".$kills);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."Deaths: ".$deaths);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."Country: ".$country);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."Gender: ".$gender);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."age: ".$age);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."CountJoinServer: ".$countjoin);
+						$sender->sendMessage(O::AQUA.O::BOLD."+-+-+-+-+-+-+--+-+-+-+-+-+-+");
+						break;
+			case 'profile':
+			if(isset($args[0])){
+				switch($args[0]){
+					case 'help':
+					$sender->sendMessage(O::AQUA.O::BOLD."+-+-+-+-".O::YELLOW."[ProfileDP]".O::AQUA."-+-+-+-+");
+					$sender->sendMessage(O::YELLOW."/myprofile".O::AQUA." - to see your Profile");
+					$sender->sendMessage(O::YELLOW."/pr setbio <bio>".O::AQUA." - after type command type your bii in chat");
+					$sender->sendMessage(O::YELLOW."/pr player <nameplayer>".O::AQUA." - to see profile players");
+					$sender->sendMessage(O::YELLOW."/pr <private/public>".O::AQUA." - to set your profile private or public");
+					$sender->sendMessage(O::YELLOW."/pr setcountry".O::AQUA." - to set your country");
+					$sender->sendMessage(O::YELLOW."/pr setgender <female/male>".O::AQUA." - to set your gender male or female");
+					$sender->sendMessage(O::YELLOW."/pr setage <yourage>".O::AQUA." - to set your AGE");
+					return true;
+					case 'setcountry':
+					$country = $args[1];
+					$n = $sender->getPlayer()->getName();
+					$c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+					$c->set("country",$country);
+					$c->save();
+					$sender->sendMessage(O::GOLD.O::BOLD."Country: ".$country);
+					return true;
+					case 'setage':
+					$age = $args[1];
+					$n = $sender->getPlayer()->getName();
+					$c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+					$c->set("age",$age);
+					$c->save();
+					$sender->sendMessage(O::GOLD.O::BOLD."set age: ".$age);
+					return true;
+					case 'setbio':
+					$n = $sender->getPlayer()->getName();
+					$nl = "\n";
+					$c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+					$c->set("setbio",true);
+					$c->save();
+					
+					$sender->sendMessage(O::GOLD.O::BOLD."Now type your bio in chat".$nl.$nl.$nl.$nl.$nl);
+					return true;
+					case 'private':
+					$n = $sender->getPlayer()->getName();
+					$c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+					$c->set("private",true);
+					$c->set("public",false);
+					$c->save();
+					$sender->sendMessage(O::AQUA.O::BOLD."Your Profile has Changed to private");
+					return true;
+					case 'public':
+					$n = $sender->getPlayer()->getName();
+					$c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+					$c->set("public",true);
+					$c->set("private",false);
+					$c->save();
+					
+					$sender->sendMessage(O::AQUA.O::BOLD."Your Profile has Changed to public");
+					return true;
+					case 'player':
+					$playername = $args[1];
+					$nl = "\n";
+					if($this->getServer()->getPlayer($playername)){
+						$c = new C($this->getDataFolder() . $playername.".yml", C::YAML);
+					$bio = $c->get("bio");
+					$deaths = $c->get("deaths");
+					$kills = $c->get("kills");
+					$private = $c->get("private");
+					$public = $c->get("public");
+					$gender = $c->get("gender");
+					$age = $c->get("age");
+					$country = $c->get("country");
+					$countjoin = $c->get("countjoinserver");
+					if($public === true){
+						$sender->sendMessage(O::AQUA.O::BOLD."+-+-+-+-".O::YELLOW."[Profile/".$playername."]".O::AQUA."-+-+-+-+");
+						$sender->sendMessage(O::AQUA.O::BOLD."BIO: ".$bio);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."Kills: ".$kills);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."Deaths: ".$deaths);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."Country: ".$country);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."Gender: ".$gender);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."age: ".$age);
+						$sender->sendMessage(O::GOLD.O::BOLD."--------");
+						$sender->sendMessage(O::AQUA.O::BOLD."CountJoinServer: ".$countjoin);
+					}
+					
+					if($private === true){
+						$sender->sendMessage(O::AQUA.O::BOLD."+-+-+-+-".O::YELLOW."[Profile/".$playername."]".O::AQUA."-+-+-+-+");
+						$sender->sendMessage(O::AQUA.O::BOLD."BIO: ".$bio);
+						$sender->sendMessage(O::AQUA.O::BOLD.$nl."profile/".$playername." is private");
+						}
+					}else{
+						$sender->sendMessage(O::RED.O::BOLD."can't find player by Name [".$playername."]");
+						}
+						return true;
+						case 'setgender':
+						}
+					}
+						if(isset($args[1])){
+							switch($args[1]){
+								case 'male':
+								$n = $sender->getPlayer()->getName();
+					  $c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+					  $c->set("gender","male");
+					  $c->save();
+					  $sender->sendMessage(O::GOLD.O::BOLD."set your gender male");
+					  return true;
+					  case 'female':
+					  $n = $sender->getPlayer()->getName();
+					  $c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+					  $c->set("gender","female");
+					  $c->save();
+					  $sender->sendMessage(O::GOLD.O::BOLD."set your gender female");
+							}
+						}
+					}
+				}
+	
+	public function onJoin(PlayerJoinEvent $e){
+		$p = $e->getPlayer();
+		$n = $p->getName();
+		$c = new C($this->getDataFolder() . $n.".yml", C::YAML);
+		
+		if($c->get("bio") == null){
+			$c->set("bio","edit BIO");
+			$c->save();
+		}
+		
+		if($c->get("deaths") == null){
+			$c->set("deaths",0);
+			$c->save();
+		}
+		if($c->get("kills") == null){
+			$c->set("kills",0);
+			$c->save();
+		}
+		if($c->get("private") == null){
+			$c->set("private",false);
+			$c->save();
+		}
+		if($c->get("public") == null){
+			$c->set("public",true);
+			$c->save();
+		}
+		if($c->get("country") == null){
+			$c->set("country","none");
+			$c->save();
+		}
+		if($c->get("countjoinserver") == null){
+			$c->set("countjoinserver",1);
+			$c->save();
+		}
+		if($c->get("gender") == null){
+			$c->set("gender","none");
+			$c->save();
+		}
+		if($c->get("age") == null){
+			$c->set("age",0);
+			$c->save();
+		}
+		if($c->get("setbio") == null){
+			$c->set("setbio",false);
+			$c->save();
+		}
+		$c->set("countjoinserver",$c->get("countjoinserver") + 1)	;
+		$c->save();
+	}
+	
+	public function onDeath(PlayerDeathEvent $e){
+		$entity = $e->getEntity();
+		$cause = $entity->getLastDamageCause();
+		if($entity instanceof Player){
+			$n = $entity->getName();
+			$deaths = new C($this->getDataFolder() .$n.".yml", C::YAML);
+			$deaths->set("deaths",$deaths->get("deaths") + 1);
+			$deaths->save();
+		}
+		
+		if($cause instanceof EntityDamageByEntityEvent){
+			$killer = $e->getEntity->getLasDamageCause()->getDamage();
+			if($killer instanceof Player){
+				$n = $killer->getName();
+				$kills = new C($this->getDataFolder() .$n.".yml", C::YAML);
+				$kills->set("kills",$kills->get("kills") + 1);
+				$kills->save();
+			}
+		}
+	}
+}
+?>

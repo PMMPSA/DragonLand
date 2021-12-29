@@ -1,0 +1,24 @@
+---
+Time changes: 0
+Tell time: true
+Tell time interval in minuts: 5
+Minigames: 6
+nether: 3
+ender: 3
+sb: 6
+pvp: 6
+sb-tick: 6001
+shop: 6
+testbuild: 6
+testbuild-tick: 6001
+shop-tick: 6001
+shopv2: 3
+pvp-tick: 6001
+Minigames-tick: 6001
+skyworldmap: 6
+NewHub: 3
+shops: 3
+All: 6
+All-tick: 6001
+skyworldmap-tick: 6001
+...

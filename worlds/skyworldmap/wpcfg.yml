@@ -1,0 +1,17 @@
+---
+bancmds:
+  /fly: /fly
+  /gmc: /gmc
+  /gamemode: /gamemode
+  /kill: /kill
+  /tp: /tp
+  /buyfly: /buyfly
+  /muamau: /muamau
+  /feed: /feed
+  /tpall: /tpall
+  /give: /give
+banitem:
+  322: Golden Apple
+  466: Enchanted Golden Apple
+protect: lock
+...

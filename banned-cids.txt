@@ -1,0 +1,15 @@
+# Updated 01/12/18 06:22 by TerminatorVN 1.0.0-Special
+# victim name | ban date | banned by | banned until | reason
+
+-5.6822600731506e+18|2017-12-27 15:59:50 +0700|Ghast_Noob|Forever|Banned by an operator.
+4.1418363026624e+18|2017-12-28 15:02:31 +0700|Ghast_Noob|Forever|Banned by an operator.
+-4.7387554627211e+18|2017-12-28 16:15:49 +0700|Ghast_Noob|Forever|Banned by an operator.
+7.3665007410839e+18|2017-12-29 14:30:00 +0700|Ghast_Noob|Forever|Banned by an operator.
+-5.1361721831953e+18|2017-12-29 14:48:16 +0700|Ghast_Noob|Forever|Banned by an operator.
+5.6278974339175e+18|2017-12-31 13:07:38 +0700|Ghast_Noob|Forever|Banned by an operator.
+6.5811212120404e+17|2018-01-05 22:09:28 +0700|Night_EnderVN|Forever|Banned by an operator.
+-7.2052479451298e+18|2018-01-05 22:52:30 +0700|Rcon|Forever|Banned by an operator.
+-9.1827459894613e+18|2018-01-06 13:49:44 +0700|Ghast_Noob|Forever|Banned by an operator.
+-1.6043362211347e+18|2018-01-09 19:07:06 +0700|Ghast_Noob|Forever|Banned by an operator.
+-5.8950658104589e+18|2018-01-09 19:35:49 +0700|Ghast_Noob|Forever|Banned by an operator.
+-8.1668921793062e+18|2018-01-11 17:58:15 +0700|Ghast_Noob|Forever|Banned by an operator.

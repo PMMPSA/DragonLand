@@ -1,0 +1,26 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "1": [
+            10002.7695,
+            5.5821,
+            9994.502,
+            "testbuild",
+            67,
+            90
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": "=(",
+    "ptCommands": {
+        "280": "tell Vu Sai Lầm Khi #<! ])<%>, \"\u0026[ ?!_ vl.",
+        "352": "home 1",
+        "264": "sudo Ni home 1"
+    },
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

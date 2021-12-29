@@ -1,0 +1,30 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "lorry": [
+            463.9758,
+            69,
+            649.9019,
+            "sb",
+            297,
+            16
+        ],
+        "dealpool": [
+            -474.1952,
+            79,
+            648.9928,
+            "sb",
+            28,
+            29
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": null,
+    "ptCommands": false,
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

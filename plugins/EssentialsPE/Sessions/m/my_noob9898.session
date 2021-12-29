@@ -1,0 +1,30 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "shop": [
+            95.9812,
+            70,
+            -99.4333,
+            "sb",
+            238,
+            90
+        ],
+        "nin": [
+            -285.5018,
+            71,
+            841.4477,
+            "sb",
+            249,
+            87
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": null,
+    "ptCommands": false,
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

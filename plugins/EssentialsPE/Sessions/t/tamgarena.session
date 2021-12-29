@@ -1,0 +1,38 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "tan": [
+            -281.1859,
+            69.5,
+            278.5604,
+            "sb",
+            118,
+            26
+        ],
+        "trade": [
+            663.4781,
+            69,
+            73.074,
+            "sb",
+            25,
+            23
+        ],
+        "pk": [
+            -649.2638,
+            72.4952,
+            -12.3,
+            "sb",
+            304,
+            40
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": null,
+    "ptCommands": false,
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

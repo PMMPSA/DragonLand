@@ -1,0 +1,1026 @@
+name: Pets
+author: Fix OokittisakoO
+description: Simple Pets Plugin By BalAnce + Driesboy + Lifeboat
+version: 2.0.0 
+main: pets\main
+api: [2.0.0] 
+<?php
+
+namespace pets;
+
+use pocketmine\level\Location;
+use pocketmine\level\Position;
+use pocketmine\nbt\tag\DoubleTag;
+use pocketmine\nbt\tag\FloatTag;
+use pocketmine\entity\Entity;
+use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\Server;
+use pocketmine\utils\TextFormat;
+use pets\command\PetCommand;
+use pocketmine\plugin\PluginBase;
+use pocketmine\Player;
+use pocketmine\nbt\tag\ListTag;
+use pocketmine\nbt\tag\CompoundTag;
+use pocketmine\math\Vector3;
+use pocketmine\utils\Config;
+
+class main extends PluginBase implements Listener {
+	
+	public static $pet;
+	public static $petState;
+	public $petType;
+	public $wishPet;
+	public static $isPetChanging;
+	public static $type;
+	
+	public function onEnable() {
+		@mkdir($this->getDataFolder());
+		@mkdir($this->getDataFolder() . "players");
+		$server = Server::getInstance();
+		$server->getCommandMap()->register('pets', new PetCommand($this,"pets"));
+		Entity::registerEntity(OcelotPet::class);
+		Entity::registerEntity(WolfPet::class);
+		Entity::registerEntity(PigPet::class);
+		Entity::registerEntity(RabbitPet::class);
+		Entity::registerEntity(ChickenPet::class);
+		Entity::registerEntity(ZombiePet::class);
+		Entity::registerEntity(IronGolemPet::class);
+		Entity::registerEntity(SnowGolemPet::class);
+		Entity::registerEntity(BatPet::class);
+		Entity::registerEntity(SpiderPet::class);
+        Entity::registerEntity(EndermanPet::class);
+        Entity::registerEntity(EggPet::class);
+        Entity::registerEntity(ExpPet::class);
+        Entity::registerEntity(LightningPet::class);
+        Entity::registerEntity(MooshroomPet::class);
+        Entity::registerEntity(NpcPet::class);
+        Entity::registerEntity(PotionPet::class);
+        Entity::registerEntity(SquidPet::class);
+        Entity::registerEntity(TntPet::class);
+        Entity::registerEntity(XPet::class);		
+		$this->getServer()->getLogger()->info(TextFormat::BLUE . "ปลักอินสัตว์เลี้ยงถูกเปิด.");
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+	}
+
+	public function create($player,$type, Position $source, ...$args) {
+		$chunk = $source->getLevel()->getChunk($source->x >> 4, $source->z >> 4, true);
+		$nbt = new CompoundTag("", [
+			"Pos" => new ListTag("Pos", [
+				new DoubleTag("", $source->x),
+				new DoubleTag("", $source->y),
+				new DoubleTag("", $source->z)
+					]),
+			"Motion" => new ListTag("Motion", [
+				new DoubleTag("", 0),
+				new DoubleTag("", 0),
+				new DoubleTag("", 0)
+					]),
+			"Rotation" => new ListTag("Rotation", [
+				new FloatTag("", $source instanceof Location ? $source->yaw : 0),
+				new FloatTag("", $source instanceof Location ? $source->pitch : 0)
+					]),
+		]);
+		$pet = Entity::createEntity($type, $chunk, $nbt, ...$args);
+		$data = new Config($this->getDataFolder() . "players/" . strtolower($player->getName()) . ".yml", Config::YAML);
+		$data->set("type", $type); 
+		$data->save();
+		$pet->setOwner($player);
+		$pet->spawnToAll();
+		return $pet; 
+	}
+
+	public function createPet(Player $player, $type, $holdType = "") {
+ 		if (isset($this->pet[$player->getName()]) != true) {	
+			$len = rand(8, 12); 
+			$x = (-sin(deg2rad($player->yaw))) * $len  + $player->getX();
+			$z = cos(deg2rad($player->yaw)) * $len  + $player->getZ();
+			$y = $player->getLevel()->getHighestBlockAt($x, $z);
+
+			$source = new Position($x , $y + 2, $z, $player->getLevel());
+			if (isset(self::$type[$player->getName()])){
+				$type = self::$type[$player->getName()];
+			}
+ 			switch ($type){
+ 				case "WolfPet":
+ 				break;
+ 				case "RabbitPet":
+ 				break;
+ 				case "PigPet":
+ 				break;
+ 				case "OcelotPet":
+ 				break;
+ 				case "ChickenPet":
+ 				break;
+ 				case "ZombiePet":
+ 				break;
+ 				case "BatPet":
+ 				break;
+ 				case "SnowGolemPet":
+ 				break;
+ 				case "IronGolemPet":
+ 				break;
+ 				case "SpiderGolemPet":
+ 				break;
+ 				case "EndermanPet":
+ 				break;	
+ 				case "EggPet":
+ 				break;	
+ 				case "ExpPet":
+ 				break;	
+ 				case "LightningPet":
+ 				break;	
+ 				case "MooshroomPet":
+ 				break;	
+ 				case "NpcPet":
+ 				break;	
+ 				case "PotionPet":
+ 				break;	
+ 				case "SquidPet":
+ 				break;	
+ 				case "TntPet":
+ 				break;	
+ 				case "XPet":
+ 				break;					
+ 				//case "WichPet":
+ 				//break;
+ 				//default:
+ 					$pets = array("OcelotPet", "PigPet", "WolfPet",  "RabbitPet", "ChickenPet", "ZombiePet", "IronGolemPet", "EggPet",  "ExpPet",  "LightningPet",  "MooshroomPet",  "NpcPet",  "PotionPet",  "SquidPet",  "TntPet",  "XPet", "SnowGolemPet", "EndermanPet", "SpiderPet", "BatPet");
+ 					$type = $pets[rand(0, 5)];
+ 			}
+			$pet = $this->create($player,$type, $source);
+			return $pet;
+ 		}
+	}
+
+	public function onPlayerQuit(PlayerQuitEvent $event) {
+		$player = $event->getPlayer();
+		$this->disablePet($player);
+	}
+	
+	public function disablePet(Player $player){
+		if (isset(self::$pet[$player->getName()])){
+			self::$pet[$player->getName()]->close();
+			unset(self::$pet[$player->getName()]);
+		}
+	}
+	
+	public function changePet(Player $player, $newtype){
+		$type = $newtype;
+		$this->disablePet($player);
+		self::$pet[$player->getName()] = $this->createPet($player, $newtype);
+	}
+	
+	public function getPet($player) {
+		return self::$pet[$player];
+	}
+	
+	public function onJoin(PlayerJoinEvent $event){
+		$player = $event->getPlayer();
+		$data = new Config($this->getDataFolder() . "players/" . strtolower($player->getName()) . ".yml", Config::YAML);
+		if($data->exists("type")){ 
+			$type = $data->get("type");
+			$this->changePet($player, $type);
+		}
+		if($data->exists("name")){ 
+			$name = $data->get("name");
+			$this->getPet($player->getName())->setNameTag($name);
+		}
+	}
+}
+<?php
+
+namespace pets\command;
+
+use pocketmine\command\CommandSender;
+use pocketmine\command\PluginCommand;
+use pets\main;
+use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as TF;
+
+class PetCommand extends PluginCommand {
+
+	public function __construct(main $main, $name) {
+		parent::__construct(
+				$name, $main
+		);
+		$this->main = $main;
+		$this->setPermission("pets.command");
+		$this->setAliases(array("pets"));
+	}
+
+	public function execute(CommandSender $sender, $currentAlias, array $args) {
+	if($sender->hasPermission('pets.command')){
+		if (!isset($args[0])) {
+			$sender->sendMessage("§e======PetHelp======");
+			$sender->sendMessage("§a/pets type [type]");
+			$sender->sendMessage("§eTypes: dog, rabbit, pig, cat, chicken, zombie, snowgolem ,spider ,irongolem ,bat");
+			$sender->sendMessage("§b/pets off to set your pet off");
+			
+			return true;
+		}
+		switch (strtolower($args[0])){
+			case "name":
+			case "setname":
+				if (isset($args[1])){
+					unset($args[0]);
+					$name = implode(" ", $args);
+					$this->main->getPet($sender->getName())->setNameTag($name);
+					$sender->sendMessage("Set Name to ".$name);
+					$data = new Config($this->main->getDataFolder() . "players/" . strtolower($sender->getName()) . ".yml", Config::YAML);
+					$data->set("name", $name); 
+					$data->save();
+				}
+				return true;
+		}
+		switch (strtolower($args[0])){
+			case "name":
+				if (isset($args[1])){
+					unset($args[0]);
+					$name = implode(" ", $args);
+					$this->main->getPet($sender->getName())->setNameTag($name);
+					$sender->sendMessage("Set Name to ".$name);
+				}
+				return true;			
+			break;
+			case "help":
+				$sender->sendMessage("§e======PetHelp======");
+				$sender->sendMessage("§a/pets type [type]");
+				$sender->sendMessage("§eTypes: dog, rabbit, pig, cat, chicken ,zombie, snowgolem ,spider ,irongolem ,bat");
+				$sender->sendMessage("§b/pets off to set your pet off");
+				return true;
+			break;
+			case "off":
+				$this->main->disablePet($sender);
+			break;
+			case "type":
+				if (isset($args[1])){
+					switch ($args[1]){
+						case "wolf":
+						case "dog":
+							$this->main->changePet($sender, "WolfPet");
+							$sender->sendMessage("§aYour pet has changed to Wolf!");
+							return true;
+						break;
+						case "pig":
+							$this->main->changePet($sender, "PigPet");
+							$sender->sendMessage("§aYour pet has changed to Pig!");
+							return true;
+						break;
+						case "rabbit":
+							$this->main->changePet($sender, "RabbitPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยนเป็น กระต่าย");
+							return true;
+						break;
+						case "cat":
+							$this->main->changePet($sender, "OcelotPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น แมว");
+							return true;
+						break;
+						case "chicken":
+							$this->main->changePet($sender, "ChickenPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น ไก่");
+							return true;
+						break;
+						case "zombie":
+							$this->main->changePet($sender, "(ZombiePet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น ซอมบี้!");
+							return true;
+						break;
+						case "spider":
+							$this->main->changePet($sender, "SpiderPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น แมงมุม!");
+							return true;
+						break;
+						case "snowgolem":
+							$this->main->changePet($sender, "SnowGolemPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น สโนโกเล็ม!");
+							return true;
+						break;
+						case "irongolem":
+							$this->main->changePet($sender, "IronGolemPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น ไอร่อนโกเล็ม!");
+							return true;
+						break;
+						case "bat":
+							$this->main->changePet($sender, "BatPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น ค้างคาว!");
+							return true;
+						break;
+						case "EndermanPet":
+							$this->main->changePet($sender, "EndermanPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น เอนเดอร์แมน!");
+							return true;
+						break;
+						case "EggPet":
+							$this->main->changePet($sender, "EggPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น ไข่!");
+							return true;
+						break;
+						case "ExpPet":
+							$this->main->changePet($sender, "ExpPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น EXP!");
+							return true;
+						break;
+						case "LightningPet":
+							$this->main->changePet($sender, "LightningPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น สายฟ้า!");
+							return true;
+						break;
+						case "MooshroomPet":
+							$this->main->changePet($sender, "MooshroomPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น เห็ด!");
+							return true;
+						break;
+						case "NpcPet":
+							$this->main->changePet($sender, "NpcPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น NPC!");
+							return true;
+						break;
+						case "PotionPet":
+							$this->main->changePet($sender, "PotionPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น ยา!");
+							return true;
+						break;
+						case "SquidPet":
+							$this->main->changePet($sender, "SquidPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น ปลาหมึก!");
+							return true;
+						break;
+						case "TntPet":
+							$this->main->changePet($sender, "TntPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น TNT!");
+							return true;
+						break;
+						case "XPet":
+							$this->main->changePet($sender, "XPet");
+							$sender->sendMessage("§aสัตว์เลี้ยงของคุณได้เปลี่ยน เป็น XP!");
+							return true;
+						break;						
+						//case "Wich":
+							//$this->main->changePet($sender, "WichPet");
+							//$sender->sendMessage("สัตว์เลี้ยงของคุณได้เปลี่ยน เป็น พ่อมด!");
+							//return true;
+						//break;
+					default:
+						$sender->sendMessage("§a/pets type [type]");
+						$sender->sendMessage("§bTypes: dog, rabbit, pig, cat, chicken, zombie, snowgolem ,spider ,irongolem ,bat");
+					break;	
+					return true;
+					}
+				}
+			break;
+		}
+		return true;
+	}
+	}
+}
+<?php
+
+namespace pets;
+
+class OcelotPet extends Pets {
+
+	const NETWORK_ID = 22;
+	
+	public $width = 0.312;
+	public $length = 2.188;
+	public $height = 0.75;
+	
+		
+	public function getName() {
+		return "OcelotPet";
+	}
+		
+	public function getSpeed() {
+		return 2.0;
+	}
+}
+<?php
+
+namespace Pets;
+
+use pocketmine\entity\Creature;
+use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\event\Timings;
+use pocketmine\level\Level;
+use pocketmine\network\protocol\AddEntityPacket;
+use pocketmine\Player;
+use pocketmine\math\Vector3;
+use pocketmine\math\Math;
+use pocketmine\block\Air;
+use pocketmine\block\Liquid;
+use pocketmine\utils\TextFormat;
+use pets\main;
+
+abstract class Pets extends Creature {
+
+	protected $owner = null;
+	protected $distanceToOwner = 0;
+	public $closeTarget = null;
+
+	public function saveNBT() {
+		
+	}
+
+	public function setOwner(Player $player) {
+		$this->owner = $player;
+	}
+
+	public function spawnTo(Player $player) {
+		if(!$this->closed ) {
+			if (!isset($this->hasSpawned[$player->getId()]) && isset($player->usedChunks[Level::chunkHash($this->chunk->getX(), $this->chunk->getZ())])) {
+				$pk = new AddEntityPacket();
+				$pk->eid = $this->getID();
+				$pk->type = static::NETWORK_ID;
+				$pk->x = $this->x;
+				$pk->y = $this->y;
+				$pk->z = $this->z;
+				$pk->speedX = 0;
+				$pk->speedY = 0;
+				$pk->speedZ = 0;
+				$pk->yaw = $this->yaw;
+				$pk->pitch = $this->pitch;
+				$pk->metadata = $this->dataProperties;
+				if (static::NETWORK_ID == 66){
+					$pk->metadata = [
+							15 => [0,1],
+							20 => [2,86]
+					];
+					$pk->y = $this->y + 0.6;
+				}
+				$player->dataPacket($pk);
+				$this->hasSpawned[$player->getId()] = $player;
+			}
+		}
+	}
+
+	public function updateMovement() {
+		if ($this->lastX !== $this->x || $this->lastY !== $this->y || $this->lastZ !== $this->z || $this->lastYaw !== $this->yaw || $this->lastPitch !== $this->pitch){
+			$this->lastX = $this->x;
+			$this->lastY = $this->y;
+			$this->lastZ = $this->z;
+			$this->lastYaw = $this->yaw;
+			$this->lastPitch = $this->pitch;
+		}
+		$this->level->addEntityMovement($this->chunk->getX(), $this->chunk->getZ(), $this->id, $this->x, $this->y, $this->z, $this->yaw, $this->pitch);
+	}
+
+	public function attack($damage, EntityDamageEvent $source) {
+		
+	}
+
+	public function move($dx, $dy, $dz) {
+		$this->boundingBox->offset($dx, 0, 0);
+		$this->boundingBox->offset(0, 0, $dz);
+		$this->boundingBox->offset(0, $dy, 0);
+		$this->setComponents($this->x + $dx, $this->y + $dy, $this->z + $dz);		
+		return true;
+	}
+
+	public function getSpeed() {
+		return 1;
+	}
+
+	public function updateMove() {
+		if(is_null($this->closeTarget)) {
+			$x = $this->owner->x - $this->x;
+			$z = $this->owner->z - $this->z;
+		} else {
+			$x = $this->closeTarget->x - $this->x;
+			$z = $this->closeTarget->z - $this->z;
+		}
+		if ($x ** 2 + $z ** 2 < 4) {
+			$this->motionX = 0;
+			$this->motionZ = 0;
+			$this->motionY = 0;
+			if(!is_null($this->closeTarget)) {
+				$this->close();
+			}
+			return;
+		} else {
+			$diff = abs($x) + abs($z);
+			$this->motionX = $this->getSpeed() * 0.15 * ($x / $diff);
+			$this->motionZ = $this->getSpeed() * 0.15 * ($z / $diff);
+		}
+		$this->yaw = -atan2($this->motionX, $this->motionZ) * 180 / M_PI;
+		if(is_null($this->closeTarget)) {
+			$y = $this->owner->y - $this->y;
+		} else {
+			$y = $this->closeTarget->y - $this->y;
+		}
+		$this->pitch = $y == 0 ? 0 : rad2deg(-atan2($y, sqrt($x ** 2 + $z ** 2)));
+		$dx = $this->motionX;
+		$dz = $this->motionZ;
+		$newX = Math::floorFloat($this->x + $dx);
+		$newZ = Math::floorFloat($this->z + $dz);
+		$block = $this->level->getBlock(new Vector3($newX, Math::floorFloat($this->y), $newZ));
+		if (!($block instanceof Air) && !($block instanceof Liquid)) {
+			$block = $this->level->getBlock(new Vector3($newX, Math::floorFloat($this->y + 1), $newZ));
+			if (!($block instanceof Air) && !($block instanceof Liquid)) {
+				$this->motionY = 0;
+				if(is_null($this->closeTarget)) {
+					$this->returnToOwner();
+					return;
+				}
+			} else {
+				if (!$block->canBeFlowedInto) {
+					$this->motionY = 1.1;
+				} else {
+					$this->motionY = 0;
+				}
+			}
+		} else {
+			$block = $this->level->getBlock(new Vector3($newX, Math::floorFloat($this->y - 1), $newZ));
+			if (!($block instanceof Air) && !($block instanceof Liquid)) {
+				$blockY = Math::floorFloat($this->y);
+				if ($this->y - $this->gravity * 4 > $blockY) {
+					$this->motionY = -$this->gravity * 4;
+				} else {
+					$this->motionY = ($this->y - $blockY) > 0 ? ($this->y - $blockY) : 0;
+				}
+			} else {
+				$this->motionY -= $this->gravity * 4;
+			}
+		}
+		$dy = $this->motionY;
+		$this->move($dx, $dy, $dz);
+		$this->updateMovement();
+	}
+
+	public function onUpdate($currentTick) {
+		if(!($this->owner instanceof Player) || $this->owner->closed) {
+			$this->fastClose();
+			return false;
+		}
+		if($this->closed){
+			return false;
+		}
+		$tickDiff = $currentTick - $this->lastUpdate;
+		$this->lastUpdate = $currentTick;
+		if (is_null($this->closeTarget) && $this->distance($this->owner) > 40) {
+			$this->returnToOwner();
+		}
+		$this->entityBaseTick($tickDiff);
+		$this->updateMove();
+		$this->checkChunks();
+
+		return true;
+	}
+
+	public function returnToOwner() {
+		$len = rand(2, 6);
+		$x = (-sin(deg2rad( $this->owner->yaw))) * $len  +  $this->owner->getX();
+		$z = cos(deg2rad( $this->owner->yaw)) * $len  +  $this->owner->getZ();
+		$this->x = $x;
+		$this->y = $this->owner->getY() + 1;
+		$this->z = $z;
+	}
+	
+	public function fastClose() {
+		parent::close();
+	}
+
+
+	public function close(){
+		if(!($this->owner instanceof Player) || $this->owner->closed) {
+ 			$this->fastClose();
+ 			return;
+ 		}
+ 		if(is_null($this->closeTarget)) {
+ 			$len = rand(12, 15);
+ 			$x = (-sin(deg2rad( $this->owner->yaw + 20))) * $len  +  $this->owner->getX();
+ 			$z = cos(deg2rad( $this->owner->yaw + 20)) * $len  +  $this->owner->getZ();
+ 			$this->closeTarget = new Vector3($x, $this->owner->getY() + 1, $z);
+ 		} else {
+ 			parent::close();
+ 		}
+	}
+
+	
+	/**
+	 * Return interval from started to current time in minutes
+	 * 
+	 * @param string $started
+	 * @return float
+	 */
+	public static function getTimeInterval($started) {
+		return round((strtotime(date('Y-m-d H:i:s')) - strtotime($started)) /60);	
+	}
+	
+}
+<?php
+
+namespace pets;
+
+class WolfPet extends Pets {
+
+	const NETWORK_ID = 14;
+
+	public $width = 0.72;
+	public $height = 0.9;
+
+	public function getName() {
+		return "WolfPet";
+	}
+
+	public function getSpeed() {
+		return 2.2;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class PigPet extends Pets {
+
+	const NETWORK_ID = 12;
+
+    public $width = 1.45;
+    public $height = 1.12;
+
+
+	public function getName() {
+		return "PigPet";
+	}
+
+	public function getSpeed() {
+		return 2.1;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class RabbitPet extends Pets {
+
+	const NETWORK_ID = 18;
+	
+	const TYPE_BROWN = 0;
+
+	public $width = 0.5;
+	public $height = 0.5;
+	
+	public function getName() {
+		return "RabbitPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+}
+<?php
+namespace pets;
+
+class ChickenPet extends Pets {
+
+	const NETWORK_ID = 10;
+	
+	public $width = 0.6;
+	public $length = 0.6;
+	public $height = 1.8;
+	
+		
+	public function getName() {
+		return "ChickenPet";
+	}
+		
+	public function getSpeed() {
+		return 2.0;
+	}
+}
+<?php
+
+namespace pets;
+
+class ZombiePet extends Pets {
+
+	const NETWORK_ID = 32;
+
+	public $width = 0.6;
+	public $length = 0.6;
+	public $height = 1.8;
+
+	public function getName() {
+		return "ZombiePet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class IronGolemPet extends Pets {
+
+	const NETWORK_ID = 20;
+
+	public $width = 0.3;
+	public $length = 0.9;
+	public $height = 2.8;
+
+	public function getName() {
+		return "IronGolemPet";
+	}
+
+	public function getSpeed() {
+		return 2.2;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class SnowGolemPet extends Pets {
+
+	const NETWORK_ID = 21;
+
+	public $width = 0.3;
+	public $length = 0.9;
+	public $height = 1.8;
+
+	public function getName() {
+		return "SnowGolemPet";
+	}
+
+	public function getSpeed() {
+		return 2.2;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class BatPet extends Pets {
+
+	const NETWORK_ID = 19;
+
+	public $width = 0.6;
+	public $length = 0.6;
+	public $height = 0.6;
+	public $flySpeed = 0.8;
+	public $switchDirectionTicks = 100;
+
+	public function getName() {
+		return "BatPet";
+	}
+
+	public function getSpeed() {
+		return 2.2;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class SpiderPet extends Pets {
+
+	const NETWORK_ID = 35;
+
+	public $width = 0.3;
+	public $length = 0.9;
+	public $height = 1.9;
+
+	public function getName() {
+		return "SpiderPet";
+	}
+
+	public function getSpeed() {
+		return 2.2;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class EndermanPet extends Pets {
+
+	const NETWORK_ID = 38;
+
+	public $width = 0.3;
+	public $length = 0.9;
+	public $height = 1.8;
+
+	public function getName() {
+		return "EndermanPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class EggPet extends Pets {
+
+	const NETWORK_ID = 82;
+
+	public $width = 0.25;
+	public $length = 0.25;
+	public $height = 0.25;
+    public $fly = 1.0;
+
+	public function getName() {
+		return "EggPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class ExpPet extends Pets {
+
+	const NETWORK_ID = 68;
+
+	public $width = 1.0;
+	public $length = 1.0;
+	public $height = 1.0;
+
+	public function getName() {
+		return "ExpPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class LightningPet extends Pets {
+
+	const NETWORK_ID = 93;
+
+	public $width = 0.3;
+	public $length = 0.9;
+	public $height = 1.8;
+
+	public function getName() {
+		return "LightningPet";
+	}
+	public function initEntity(){
+		parent::initEntity();
+		$this->setMaxHealth(2);
+		$this->setHealth(2);
+	}
+	public function onUpdate($tick){
+		parent::onUpdate($tick);
+		if($this->age > 20){
+			$this->kill();
+			$this->close();
+		}
+		return true;
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class MooshroomPet extends Pets {
+
+	const NETWORK_ID = 16;
+
+	public $width = 0.3;
+	public $length = 0.9;
+	public $height = 1.8;
+
+	public function getName() {
+		return "MooshroomPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class NpcPet extends Pets {
+
+	const NETWORK_ID = 15;
+
+	public $width = 0.6;
+	public $length = 0.6;
+	public $height = 1.8;
+
+	public function getName() {
+		return "NpcPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class PotionPet extends Pets {
+
+	const NETWORK_ID = 86;
+
+	public $width = 1.0;
+	public $length = 1.0;
+	public $height = 1.0;
+
+	public function getName() {
+		return "PotionPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class SquidPet extends Pets {
+
+	const NETWORK_ID = 17;
+
+	public $width = 0.95;
+	public $length = 0.95;
+	public $height = 0.95;
+
+	public function getName() {
+		return "SquidPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class TntPet extends Pets {
+
+	const NETWORK_ID = 65;
+
+	public $width = 0.98;
+	public $length = 0.98;
+	public $height = 0.98;
+
+	public function getName() {
+		return "TntPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}
+<?php
+
+namespace pets;
+
+class XPet extends Pets {
+
+	const NETWORK_ID = 69;
+
+	public $width = 1.0;
+	public $length = 1.0;
+	public $height = 1.0;
+
+	public function getName() {
+		return "XPet";
+	}
+
+	public function getSpeed() {
+		return 2.0;
+	}
+
+}

@@ -1,0 +1,26 @@
+name: VoteReward
+main: KhoaGaming123\VoteReward\Main
+version: 1.0
+api: [2.0.0, 3.0.0]
+author: KhoaGaming123
+load: POSTWORLD
+commands:
+  vote:
+    usage: "/vote"
+    description: "Kiểm tra xem bạn đã vote trên trang web danh sách server chưa"
+    permission: votereward.command.vote
+permissions:
+  votereward:
+    default: false
+    description: "Cho phép tất cả truy cập tính năng."
+    children:
+      votereward.command:
+        default: false
+        description: "Cho phép tất cả sử dụng lệnh của votereward."
+        children:
+          votereward.command.vote:
+            default: true
+            description: "Cho phép tất cả sử dụng lệnh vote."
+          votereward.command.reload:
+            default: op
+            description: "Cho phép tất cả sử dụng lệnh phụ reload."

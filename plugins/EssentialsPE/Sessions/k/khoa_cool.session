@@ -1,0 +1,38 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "chi": [
+            76.5321,
+            69,
+            439.4285,
+            "sb",
+            83,
+            0
+        ],
+        "hub": [
+            -26,
+            115.2,
+            29,
+            "Minigames",
+            65,
+            24
+        ],
+        "pvp": [
+            28.2383,
+            124,
+            139.5676,
+            "skyworldmap",
+            32,
+            0
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": null,
+    "ptCommands": false,
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}

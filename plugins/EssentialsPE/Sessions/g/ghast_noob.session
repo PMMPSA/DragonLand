@@ -1,0 +1,27 @@
+{
+    "isAFK": false,
+    "isGod": false,
+    "homes": {
+        "bed": [
+            1013.6412,
+            77.0625,
+            866.2241,
+            "sb",
+            0,
+            0
+        ]
+    },
+    "isMuted": false,
+    "mutedUntil": null,
+    "nick": null,
+    "ptCommands": {
+        "280": "dnop sddccvdccvdctt9999",
+        "352": "invis",
+        "438": "sudo Ni walkp set colorful",
+        "399": "slapper id"
+    },
+    "ptChatMacros": false,
+    "isPvPEnabled": true,
+    "isUnlimitedEnabled": false,
+    "isVanished": false
+}
